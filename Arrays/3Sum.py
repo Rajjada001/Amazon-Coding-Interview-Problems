@@ -1,12 +1,16 @@
 def threeSum(a,k):
+    if a[0] and len(a)==1:
+        return
     for i in range(len(a)):
-        s = set()
+        s = {}
         currSum = k-a[i]
         for j in range(1,len(a)):
-            if(currSum-a[j]) in s:
-                return [a[i],a[j],currSum-a[j]]
-            s.add(a[j])
-    return False
+            temp = currSum-a[j]
+            if(temp in s):
+                return [i,j,s[temp]]
+            s[a[j]]= j
+
+    
 
 
 

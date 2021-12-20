@@ -1,15 +1,12 @@
 def twoSum(a,k):
-    start,end = 0, len(a)-1
-    #start from left index to the right
-    while(start<end):
-        tsum = a[start] + a[end]
-        if(tsum==k):
-            return [start,end]
-            break
-        elif(tsum<k):
-            start+=1
-        else:
-            end-=1
+    s = {}
+    for i in range(len(a)):
+         temp = k-a[i]
+
+         if temp in s:
+             return [s[temp],i]
+         else:
+             s[a[i]]=i
         
 
 
